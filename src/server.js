@@ -14,8 +14,8 @@ io.on('connection', socket => {
     socket.join(box)
   })
 })
-
-mongoose.connect('mongodb+srv://omnidrive:omnidrive@cluster0-fn2w9.mongodb.net/omnistack?retryWrites=true', {
+const uri = process.env.DB_URL || 'mongodb://admin:admin123@ds153593.mlab.com:53593/omnidrive'
+mongoose.connect(uri, {
   useNewUrlParser: true
 })
 
